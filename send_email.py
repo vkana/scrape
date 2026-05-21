@@ -3,7 +3,9 @@ import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import datetime
+from dotenv import load_dotenv
 
+load_dotenv()
 GMAIL_ADDRESS = os.environ["GMAIL_ADDRESS"]
 GMAIL_APP_PASSWORD = os.environ["GMAIL_APP_PASSWORD"]
 
@@ -23,7 +25,7 @@ def send_email():
         server.sendmail(GMAIL_ADDRESS, recipient, msg.as_string())
         print("Email sent successfully!")
 
-    print(f"Script ran at: {datetime.datetime.utcnow()} UTC")
+    print(f"Script ran at: {datetime.datetime.now(datetime.UTC)} UTC")
 
 if __name__ == "__main__":
     send_email()

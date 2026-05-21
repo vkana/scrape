@@ -2,7 +2,7 @@ name: Send Scheduled Email
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # 9:00 AM UTC daily (run 1)
+    - cron: '50 2 * * *'   # 9:00 AM UTC daily (run 1)
     - cron: '0 15 * * *'  # 3:00 PM UTC daily (run 2)
   workflow_dispatch:       # allows manual trigger from GitHub UI
 
@@ -21,6 +21,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
       - name: Run email script
         env:
