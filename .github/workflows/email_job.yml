@@ -1,0 +1,26 @@
+name: Send Scheduled Email
+
+on:
+  schedule:
+    - cron: '9 2 * * *'   # 9:00 AM UTC daily (run 1)
+    - cron: '0 15 * * *'  # 3:00 PM UTC daily (run 2)
+  workflow_dispatch:       # allows manual trigger from GitHub UI
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run email script
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: python send_email.py
