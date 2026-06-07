@@ -1,0 +1,411 @@
+# Instincts generated from https://github.com/vkana/scrape
+# Generated: 2026-06-07T17:36:15.493Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: scrape-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Commit Length
+
+## Action
+
+Keep commit messages concise (~23 characters)
+
+## Evidence
+
+- Average commit message length: 23 chars
+- Based on 14 commits
+
+---
+id: scrape-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: scrape-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: scrape-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: scrape-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: scrape-workflow-modify-github-workflow-schedule
+trigger: "when doing modify github workflow schedule"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Workflow Modify Github Workflow Schedule
+
+## Action
+
+Follow the modify-github-workflow-schedule workflow:
+1. Edit .github/workflows/email_job.yml to change cron schedule or add variables
+2. Commit the changes with a message referencing the schedule or testing
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: .github/workflows/email_job.yml
+
+---
+id: scrape-workflow-add-or-update-logging
+trigger: "when doing add or update logging"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Workflow Add Or Update Logging
+
+## Action
+
+Follow the add-or-update-logging workflow:
+1. Edit .github/workflows/email_job.yml or send_email.py to add or update log messages
+2. Commit the changes with a message referencing logging
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/email_job.yml, send_email.py
+
+---
+id: scrape-workflow-initial-project-setup
+trigger: "when doing initial project setup"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/vkana/scrape
+---
+
+# Scrape Workflow Initial Project Setup
+
+## Action
+
+Follow the initial-project-setup workflow:
+1. Create .github/workflows/email_job.yml
+2. Create send_email.py
+3. Create .gitignore and README.md
+4. Commit all initial files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .github/workflows/email_job.yml, send_email.py, .gitignore
+
+---
+id: scrape-instinct-file-naming
+trigger: "When creating or renaming a file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct File Naming
+
+## Action
+
+Use snake_case for file names
+
+## Evidence
+
+- Pattern in files: send_email.py
+
+---
+id: scrape-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in code: function naming conventions
+
+---
+id: scrape-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in code: class naming conventions
+
+---
+id: scrape-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constants
+
+## Evidence
+
+- Pattern in code: constant naming conventions
+
+---
+id: scrape-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in code: relative import style
+
+---
+id: scrape-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in code: named export style
+
+---
+id: scrape-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Test Location
+
+## Action
+
+Place tests in a separate directory from source code
+
+## Evidence
+
+- Architecture: testLocation is 'separate'
+
+---
+id: scrape-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Git Commit Format
+
+## Action
+
+Use a freeform commit message without a required prefix
+
+## Evidence
+
+- Seen in commit: 'added 1 hour frequency to test temporary'
+- Seen in commit: 'added log message'
+
+---
+id: scrape-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Git Commit Length
+
+## Action
+
+Keep commit messages concise, averaging around 23 characters
+
+## Evidence
+
+- Commits average length: 23
+
+---
+id: scrape-instinct-modify-workflow-schedule
+trigger: "When someone wants to test or update the schedule/frequency or environment of the automated email job"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Modify Workflow Schedule
+
+## Action
+
+Edit .github/workflows/email_job.yml to change cron schedule or add variables, then commit with a message referencing the schedule or testing
+
+## Evidence
+
+- Workflow: modify-github-workflow-schedule
+- Seen in commit: 'changed cron time for testing'
+- Pattern in file: .github/workflows/email_job.yml
+
+---
+id: scrape-instinct-add-update-logging
+trigger: "When someone wants to enhance logging for debugging or monitoring purposes"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Add Update Logging
+
+## Action
+
+Edit .github/workflows/email_job.yml or send_email.py to add or update log messages, then commit with a message referencing logging
+
+## Evidence
+
+- Workflow: add-or-update-logging
+- Seen in commit: 'added log message'
+- Pattern in files: .github/workflows/email_job.yml, send_email.py
+
+---
+id: scrape-instinct-initial-project-setup
+trigger: "When starting a new project or repository"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: vkana/scrape
+---
+
+# Scrape Instinct Initial Project Setup
+
+## Action
+
+Create .github/workflows/email_job.yml, send_email.py, .gitignore, and README.md, then commit all initial files
+
+## Evidence
+
+- Workflow: initial-project-setup
+- Pattern in files: .github/workflows/email_job.yml, send_email.py, .gitignore, README.md
+
